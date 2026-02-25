@@ -1,26 +1,83 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>ASCII Art</title>
+    <title>ASCII Studio</title>
+    <style>
+        body {
+            background: #0f0f0f;
+            color: #ffffff;
+            font-family: monospace;
+            display: flex;
+            justify-content: center;
+            padding: 50px;
+        }
+
+        .container {
+            width: 800px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 40px;
+            letter-spacing: 2px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 120px;
+            background: #1a1a1a;
+            color: white;
+            border: 1px solid #333;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        .banners {
+            margin-top: 20px;
+        }
+
+        button {
+            margin-top: 20px;
+            width: 100%;
+            padding: 12px;
+            background: #ff3c00;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #ff5e2b;
+        }
+
+        pre {
+            margin-top: 40px;
+            background: #111;
+            padding: 20px;
+            overflow-x: auto;
+        }
+    </style>
 </head>
 <body>
+<div class="container">
 
-<h1>ASCII Art Generator</h1>
+<h1>ASCII STUDIO</h1>
 
 <form action="/ascii-art" method="POST">
-    <textarea name="text" rows="5" cols="40"></textarea><br><br>
+    <textarea name="text" placeholder="Enter text..."></textarea>
 
-    <input type="radio" name="banner" value="standard" checked> Standard
-    <input type="radio" name="banner" value="shadow"> Shadow
-    <input type="radio" name="banner" value="thinkertoy"> Thinkertoy
+    <div class="banners">
+        <input type="radio" name="banner" value="standard" checked> Standard
+        <input type="radio" name="banner" value="shadow"> Shadow
+        <input type="radio" name="banner" value="thinkertoy"> Thinkertoy
+    </div>
 
-    <br><br>
     <button type="submit">Generate</button>
 </form>
 
-<pre>
-{{.Result}}
-</pre>
+<pre>{{.Result}}</pre>
 
+</div>
 </body>
 </html>
